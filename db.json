@@ -12,7 +12,16 @@
       "name": "Master",
       "email": "masterofgaming700@gmail.com",
       "password": "925Pgxja$",
-      "tasks": []
+      "tasks": [
+        {
+          "name": "finish probability quiz studying",
+          "mood": "Energetic",
+          "effort": "medium",
+          "id": 1743498045067,
+          "completed": false,
+          "points": 5
+        }
+      ]
     }
   ]
 }

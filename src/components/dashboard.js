@@ -62,7 +62,7 @@ const Dashboard = () => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setNewTask((prevTask) => ({ ...prevTask, [name]: value }));
+    setNewTask((prevTask) => ({ ...prevTask, [name]: value })); //basically used to get the input based on what u give
   };
 
   const addTask = async (e) => {
@@ -83,13 +83,13 @@ const Dashboard = () => {
     };
 
     try {
-      const response = await Axios.get(API_URL);
+      const response = await Axios.get(API_URL); //gets data from db.json
       const userData = response.data;
       const updatedTasks = [...userData.tasks, newTaskWithPoints];
 
-      await Axios.patch(API_URL, { tasks: updatedTasks });
-      setNewTask({ name: "", mood: "", effort: "" });
-      setTasks(updatedTasks); // Update local state directly
+      await Axios.patch(API_URL, { tasks: updatedTasks }); //patch creates a http request and updates the db.json thing with the 2nd arguemt 
+      setNewTask({ name: "", mood: "", effort: "" }); //after u set name mood effort u need those to be empty again so we do this
+      setTasks(updatedTasks); // reflects in db
     } catch (error) {
       console.error("Error adding task:", error);
     }
@@ -99,7 +99,7 @@ const Dashboard = () => {
     try {
       const response = await Axios.get(API_URL);
       const userData = response.data;
-      const updatedTasks = userData.tasks.filter((task) => task.id !== taskId);
+      const updatedTasks = userData.tasks.filter((task) => task.id !== taskId); //it just makes a new array and if it isnt equal to the id of the thing u want to deleete it adds it to the array
 
       await Axios.patch(API_URL, { tasks: updatedTasks });
       setTasks(updatedTasks); // Update local state

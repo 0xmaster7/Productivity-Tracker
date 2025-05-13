@@ -72,7 +72,7 @@ const Login = () => {
         console.log("User logged in:", user);
         setError("");
 
-        // ✅ Store userEmail and userId in localStorage dynamically
+        //  Store userEmail and userId in browsers storage dynamically
         localStorage.setItem("userEmail", user.email);
         localStorage.setItem("userId", user.id);
 
