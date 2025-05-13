@@ -111,8 +111,9 @@ This approach ensures a smooth experience by rehydrating the user's session stat
 
 ---
 
-## 📁 Folder Structure (Brief)
+## 📁 Folder Structure
 
+```bash
 productivity_tracker/
 │
 ├── public/
@@ -130,7 +131,7 @@ productivity_tracker/
 │ │ ├── style.css # Global styling
 │
 ├── db.json (external) # Used with JSON Server to simulate a backend
-
+```
 
 ---
 
